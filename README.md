@@ -16,4 +16,4 @@ Este proyecto es una aplicación web de un juego de "Amigo Secreto". Permite a l
 
 1. Clona el repositorio:
    ```sh
-   git clone https://github.com/DairXP/challenge-amigo-secreto
+   git clone https://github.com/dairxp/challenge-amigo-secreto
