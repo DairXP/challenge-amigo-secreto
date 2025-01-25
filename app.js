@@ -21,3 +21,43 @@ function agregarAmigo() {
     // Mostrar la lista de amigos actualizada
     mostrarListaAmigos();
 }
+
+function mostrarListaAmigos() {
+    // Obtener el elemento de la lista
+    const lista = document.getElementById('listaAmigos');
+
+    // Limpiar la lista existente
+    lista.innerHTML = '';
+
+    // Iterar sobre el arreglo
+    for (let i = 0; i < amigos.length; i++) {
+        // Crear un nuevo elemento de lista
+        const li = document.createElement('li');
+        li.textContent = amigos[i];
+
+        // Agregar el elemento a la lista
+        lista.appendChild(li);
+    }
+}
+function sortearAmigo() {
+    // Validar que haya amigos disponibles
+    if (amigos.length === 0) {
+        alert('No hay amigos disponibles para sortear.');
+        return;
+    }
+    // Generar un índice aleatorio
+    const indiceAleatorio = Math.floor(Math.random() * amigos.length);
+
+    // Obtener el nombre sorteado
+    const amigoSeleccionado = amigos[indiceAleatorio];
+
+    // Mostrar el resultado
+    mostrarResultado(amigoSeleccionado);
+}
+function mostrarResultado(amigoSeleccionado) {
+    const resultado = document.getElementById('resultado');
+    resultado.innerHTML = '';
+    const li = document.createElement('li');
+    li.textContent = `Tu amigo secreto es: ${amigoSeleccionado}`;
+    resultado.appendChild(li);
+}
